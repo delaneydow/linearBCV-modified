@@ -300,9 +300,9 @@ int main (int argc, char * const argv[]) {
             }
      // WRITE TRANSFORM TO COMPRESSED NIFTI FILE, TYPECAST OUTPUT TO INT16 TO BE COMPATIBLE IN MATLAB
      
-            (short) gzWriteNifti(outputfile1,warped1,header,m,n,o,1); //saves output as 16bits 
+            gzWriteNifti(outputfile1,warped1,header,m,n,o,1); //saves output as 16bits 
 
-            cout<<"AFFINE TRANSFORM WRITTEN TO COMPRESSED NIFTI FILE"; //OUTPUT STATEMENT 
+            cout<<"AFFINE TRANSFORM WRITTEN TO COMPRESSED NIFTI FILE\n"; //OUTPUT STATEMENT 
 
         // if SEGMENTATION of moving image is provided APPLY SAME TRANSFORM
             if(args.segment){
@@ -326,7 +326,7 @@ int main (int argc, char * const argv[]) {
                 gzWriteSegment(outputseg,segw,header,m,n,o,1); //OUTPUT SEGMENTATION FILE AS COMPRESSED NIFTI FILE
             }
             
-            cout<<"WRITE AFFINE TRANSFORM OF SEGMENTATION OF MOVING IMAGE TO COMPRESSED NIFTI FILE."; //OUTPUT STATEMENT
+            cout<<"WRITE AFFINE TRANSFORM OF SEGMENTATION OF MOVING IMAGE TO COMPRESSED NIFTI FILE.\n"; //OUTPUT STATEMENT
         
 
         delete costall; delete costall2;
